@@ -1,0 +1,33 @@
+<h3>Products List</h3>
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Category</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.category }}</td>
+        <td>
+          <div class="btn-group" role="group">
+            <a [routerLink]="['../../products/edit', product._id]" routerLinkActive="active-link"
+              [routerLinkActiveOptions]='{exact:true}' class="btn btn-outline-success btn-sm text-nowrap">Edit
+            </a>
+            <button (click)="deleteProduct(product._id)" type="submit"
+              class="btn btn-outline-danger btn-sm text-nowrap">
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

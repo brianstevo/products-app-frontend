@@ -1,0 +1,24 @@
+<div class="container col-sm-8 col-md-6 col-lg-4 justify-content-center">
+  <h3 class="text-center mb-5">LOGIN</h3>
+  <ul class="nav nav-pills nav-fill mb-5">
+    <li class="nav-item me-2">
+      <a class="nav-link active">Login</a>
+    </li>
+    <li class="nav-item me-2">
+      <a class="nav-link not-active" [routerLink]="['../signup']">Signup</a>
+    </li>
+  </ul>
+  <form (submit)="login(loginForm)" #loginForm="ngForm">
+    <div class="form-outline mb-4">
+      <input ngModel="admin@gmail.com" type="email" name="email" #loginInput="ngModel" class="form-control"
+        placeholder="Email" required email />
+    </div>
+    <div class="form-outline mb-5">
+      <input ngModel="admin" #passwordInput="ngModel" type="password" name="password" class="form-control"
+        placeholder="Password" required />
+    </div>
+    <div class="d-grid gap-2">
+      <button class="btn btn-primary" [disabled]="loginForm.invalid" type="submit">Login</button>
+    </div>
+  </form>
+</div>

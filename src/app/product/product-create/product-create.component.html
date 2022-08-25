@@ -1,0 +1,19 @@
+<div class="container">
+  <h3 class="px-2 py-2">Add New Product</h3>
+  <form (ngSubmit)="createProduct(form)" [formGroup]="form" class="px-2">
+    <div class="row mb-3">
+      <input formControlName="name" type="text" class="form-control" placeholder="Name" />
+    </div>
+    <div class="row mb-3">
+      <input formControlName="description" type="text" class="form-control" placeholder="Description" />
+    </div>
+    <div class="row mb-3">
+      <input formControlName="price" type="number" class="form-control" placeholder="Price" />
+    </div>
+    <div class="row mb-3">
+      <input formControlName="category" type="text" class="form-control" placeholder="Category" />
+    </div>
+    <button type="submit" [disabled]="form.invalid" class="btn btn-outline-primary btn-sm mx-2">Submit</button>
+    <button type="button" class="btn btn-outline-danger btn-sm" (click)="cancel()">Cancel</button>
+  </form>
+</div>
